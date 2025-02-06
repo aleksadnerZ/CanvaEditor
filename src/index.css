@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "tailwindcss";
+
+#root {
+  flex: 1;
+}
+
+@theme {
+  --spacing: 1px;
+  --font-poppins: Poppins, sans-serif;
+
+  --font-display: "Satoshi", sans-serif;
+  --font-sans: "Poppins", sans-serif;
+
+  --color-primary: #7209b7;
+  --color-primary50: rgba(114, 9, 183, 0.5);
+  --color-red: #cb0000;
+
+  --color-black100: #353535;
+  --color-black75: #676767;
+  --color-black50: #989898;
+  --color-black25: #cdcdcd;
+  --color-myGrey: #9b9b9b;
+
+  --color-white: #ffffff;
+  --color-white98: #fafafa;
+  --color-white97: #f7f7f8;
+
+  --font-size-button: 15px;
+  --font-size-display: 32px;
+  --font-size-body: 18px;
+
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.text-primary {
+  font-family: Poppins;
+  color: var(--color-primary);
+}
+
+.text-display {
+  font-family: Poppins;
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-bold);
+}
+
+.text-button {
+  font-family: Poppins;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-body {
+  font-family: Poppins;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+}
