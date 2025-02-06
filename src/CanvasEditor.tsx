@@ -27,28 +27,7 @@ const useDraggableResize = (
     }
   };
 
-  const onResize = (
-    _e: unknown,
-    _direction: unknown,
-    ref: HTMLDivElement,
-    _delta: unknown,
-    position: { x: number; y: number }
-  ) => {
-    const newWidth = ref.offsetWidth;
-    const newHeight = ref.offsetHeight;
-    const scaleFactor = newWidth / (el.width || 200);
-
-    updateElement(el.id, {
-      width: newWidth,
-      height: newHeight,
-      fontSize:
-        el.type === "text" ? (el.fontSize || 16) * scaleFactor : undefined,
-      x: position.x,
-      y: position.y,
-    });
-  };
-
-  return { onDragStop, onResize };
+  return { onDragStop };
 };
 
 const useElementVisibility = (onBlurSuccess?: () => void) => {
@@ -158,7 +137,7 @@ const EditableElement = ({
     hideControlsOnBlur ? () => setIsBlurred(true) : undefined
   );
 
-  const { onDragStop, onResize } = useDraggableResize(
+  const { onDragStop } = useDraggableResize(
     el,
     updateElement,
     hideControlsOnMoveEnd ? () => setIsMovedEnded(true) : undefined
@@ -175,7 +154,6 @@ const EditableElement = ({
         height: el.height || 120,
       }}
       onDragStop={onDragStop}
-      onResize={onResize}
       dragHandleClassName="drag-handle"
       resizeHandleComponent={{
         bottomRight: (
